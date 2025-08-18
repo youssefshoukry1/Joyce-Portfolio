@@ -23,6 +23,7 @@ export default function Home() {
       src={img}
       alt="profile"
       className="w-full h-full object-cover object-[45%_12%]"
+      loading="eager"
     />
   </Motion.div>
 
