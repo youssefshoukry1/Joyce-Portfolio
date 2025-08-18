@@ -34,7 +34,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
         <Motion.ul
-          className="flex gap-8 md:gap-12 uppercase tracking-wide bg-transparent"
+          className="flex gap-8 md:gap-12  tracking-wide bg-transparent"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -44,7 +44,7 @@ export default function Navbar() {
               key={id}
               variants={itemVariants}
               className="relative group text-gray-100 text-sm md:text-lg font-medium cursor-pointer 
-                         hover:text-blue-400 transition-colors duration-300"
+              hover:text-blue-400 transition-colors duration-300"
               onClick={() => handleScroll(id)}
             >
               {name}
