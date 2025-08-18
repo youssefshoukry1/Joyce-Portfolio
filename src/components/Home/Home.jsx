@@ -13,14 +13,13 @@ export default function Home() {
   <div className="absolute inset-0 -z-10 backdrop-blur-3xl" />
 
   {/* صورة البروفايل */}
-<Motion.img
-  src={img}
-  alt="profile"
+<Motion.div
   initial={{ opacity: 0, scale: 0.9 }}
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ once: true }}
   transition={{ duration: 0.8, ease: "easeOut" }}
-  className="w-52 h-52 md:w-72 md:h-72 rounded-full shadow-lg object-cover object-[45%_12%]"
+  className="w-52 h-52 md:w-72 md:h-72 rounded-full border-4 border-blue-700 shadow-lg bg-cover bg-center"
+  style={{ backgroundImage: `url(${img})` , backgroundPosition: "20% 20%"}}
 />
   {/* النصوص */}
   <Motion.div
