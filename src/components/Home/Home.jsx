@@ -43,7 +43,7 @@ export default function Home() {
         <Motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold shadow-md 
+          className="px-6 py-3 rounded-full bg-blue-700 text-white font-semibold shadow-md 
           hover:bg-blue-600 transition-all duration-300"
         >
           Know More

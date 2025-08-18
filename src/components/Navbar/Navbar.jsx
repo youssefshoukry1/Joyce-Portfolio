@@ -18,8 +18,8 @@ export default function Navbar() {
   };
 
   const itemVariants = {
-    hidden: { y: -20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    hidden: { y: -10, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
   };
 
   const handleScroll = (id) => {
@@ -31,11 +31,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/80 shadow-md border-b border-blue-500/20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
         {/* Desktop Menu */}
         <Motion.ul
-          className="hidden md:flex gap-12 uppercase tracking-wide"
+          className="hidden md:flex gap-12 uppercase tracking-wide bg-transparent"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -44,8 +44,8 @@ export default function Navbar() {
             <Motion.li
               key={id}
               variants={itemVariants}
-              className="relative group text-gray-200 text-lg font-medium cursor-pointer 
-                        hover:text-blue-500 transition-colors duration-300"
+              className="relative group text-gray-100 text-lg font-medium cursor-pointer 
+                        hover:text-blue-400 transition-colors duration-300"
               onClick={() => handleScroll(id)}
             >
               {name}
@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-200 absolute right-6"
+          className="md:hidden text-gray-100 absolute right-6 mt-4"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -66,7 +66,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <Motion.ul
-          className="md:hidden flex flex-col gap-6 px-6 py-6 bg-black/95 backdrop-blur-lg shadow-lg absolute top-full left-0 w-full"
+          className="md:hidden flex flex-col gap-6 px-6 py-6 bg-black/90 backdrop-blur-lg shadow-lg absolute top-full left-0 w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -75,7 +75,7 @@ export default function Navbar() {
             <Motion.li
               key={id}
               variants={itemVariants}
-              className="text-gray-200 text-lg font-medium cursor-pointer hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-100 text-lg font-medium cursor-pointer hover:text-blue-400 transition-colors duration-300"
               onClick={() => handleScroll(id)}
             >
               {name}
