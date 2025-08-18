@@ -8,7 +8,7 @@ export default function Home() {
       id="Home-section"
       className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-8 md:px-16 bg-black text-gray-200"
     >
-      {/* صورة البروفايل (مدورة) */}
+      {/* صورة البروفايل (مدورة + تحكم يدوي في القص) */}
       <Motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -18,7 +18,7 @@ export default function Home() {
         <img
           src={img}
           alt="profile"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-[45%_10%]"
         />
       </Motion.div>
 
@@ -32,6 +32,7 @@ export default function Home() {
         <h1 className="text-2xl md:text-5xl font-bold text-blue-600 mb-4">
           Hey, I'm <span className="text-gray-100">Joyce Bekhet</span>
         </h1>
+
         <p className="text-sm md:text-xl text-gray-400 mb-6">
           I am a{" "}
           <span className="text-blue-500 font-medium">
