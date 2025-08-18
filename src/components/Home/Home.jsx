@@ -13,20 +13,19 @@ export default function Home() {
   <div className="absolute inset-0 -z-10 backdrop-blur-3xl" />
 
   {/* صورة البروفايل */}
-  <Motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-blue-700 shadow-lg"
-  >
-    <img
-      src={img}
-      alt="profile"
-      className="w-full h-full object-cover object-[45%_12%]"
-      
-    />
-  </Motion.div>
-
+ <Motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-blue-700 shadow-lg"
+>
+  <img
+    src={img}
+    alt="profile"
+    className="w-full h-full object-cover object-[45%_12%]"
+  />
+</Motion.div>
   {/* النصوص */}
   <Motion.div
     className="text-center md:text-left max-w-xl"
