@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion as Motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const navItem = [
     { name: "Home", id: "Home-section" },
     { name: "About", id: "About-section" },
@@ -19,23 +16,25 @@ export default function Navbar() {
 
   const itemVariants = {
     hidden: { y: -10, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
   };
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
     }
   };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
-        {/* Desktop Menu */}
         <Motion.ul
-          className="hidden md:flex gap-12 uppercase tracking-wide bg-transparent"
+          className="flex gap-8 md:gap-12 uppercase tracking-wide bg-transparent"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -44,8 +43,8 @@ export default function Navbar() {
             <Motion.li
               key={id}
               variants={itemVariants}
-              className="relative group text-gray-100 text-lg font-medium cursor-pointer 
-                        hover:text-blue-400 transition-colors duration-300"
+              className="relative group text-gray-100 text-sm md:text-lg font-medium cursor-pointer 
+                         hover:text-blue-400 transition-colors duration-300"
               onClick={() => handleScroll(id)}
             >
               {name}
@@ -53,36 +52,7 @@ export default function Navbar() {
             </Motion.li>
           ))}
         </Motion.ul>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-100 absolute right-6 mt-4"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <Motion.ul
-          className="md:hidden flex flex-col gap-6 px-6 py-6 bg-black/90 backdrop-blur-lg shadow-lg absolute top-full left-0 w-full"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {navItem.map(({ name, id }) => (
-            <Motion.li
-              key={id}
-              variants={itemVariants}
-              className="text-gray-100 text-lg font-medium cursor-pointer hover:text-blue-400 transition-colors duration-300"
-              onClick={() => handleScroll(id)}
-            >
-              {name}
-            </Motion.li>
-          ))}
-        </Motion.ul>
-      )}
     </nav>
   );
 }
