@@ -18,7 +18,7 @@ export default function Home() {
         <img
           src={img}
           alt="profile"
-          className="w-full h-full object-cover object-[45%_10%]"
+          className="w-full h-full object-cover object-[45%_12%]"
         />
       </Motion.div>
 
