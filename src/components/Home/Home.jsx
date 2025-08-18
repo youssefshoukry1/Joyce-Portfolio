@@ -1,6 +1,6 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
-import img from "../../../public/IMG-20250816-WA0061.jpg";
+import img from "../../assets/img/IMG-20250816-WA0061.jpg";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       src={img}
       alt="profile"
       className="w-full h-full object-cover object-[45%_12%]"
-      loading="eager"
+      
     />
   </Motion.div>
 
