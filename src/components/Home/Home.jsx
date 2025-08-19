@@ -1,6 +1,5 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
-import img from "../../assets/img/IMG-20250816-WA0061.jpg";
 import About from "../About/About";
 
 export default function Home() {
@@ -25,7 +24,7 @@ export default function Home() {
     viewport={{ once: true }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="w-52 h-52 md:w-72 md:h-72 rounded-full border-4 border-blue-700 shadow-lg bg-cover bg-center relative z-10"
-    style={{ backgroundImage: `url(${img})`, backgroundPosition: "20% 20%" }}
+    style={{ backgroundImage: `url(/joice.webp)`, backgroundPosition: "20% 20%" }}
   />
 
   {/* النصوص */}
