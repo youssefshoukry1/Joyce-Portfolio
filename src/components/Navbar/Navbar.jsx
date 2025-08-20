@@ -56,36 +56,34 @@ export default function Navbar() {
 
   return (
     <>
-      <Motion.nav
-        className={`fixed top-0 left-0 w-full z-50 bg-transparent transition-transform duration-500 ${
-          show ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
-          <Motion.ul
-            className="flex gap-8 md:gap-12 tracking-wide bg-transparent"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {navItem.map(({ name, id }) => (
-              <Motion.li
-                key={id}
-                variants={itemVariants}
-                className="relative group text-gray-100 text-sm md:text-lg font-medium cursor-pointer 
-              hover:text-blue-400 transition-colors duration-300"
-                onClick={() => handleScroll(id)}
-              >
-                <button>
-                  {name}
-                </button>
-                
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-              </Motion.li>
-            ))}
-          </Motion.ul>
-        </div>
-      </Motion.nav>
+    <Motion.nav
+  className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${
+    show ? "translate-y-0" : "-translate-y-full"
+  } backdrop-blur-md bg-black/30`}   // ✨ هنا ضفت blur + خلفية شفافة
+>
+  <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center items-center">
+    <Motion.ul
+      className="flex gap-8 md:gap-12 tracking-wide"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {navItem.map(({ name, id }) => (
+        <Motion.li
+          key={id}
+          variants={itemVariants}
+          className="relative group text-gray-100 text-sm md:text-lg font-medium cursor-pointer 
+            hover:text-blue-400 transition-colors duration-300"
+          onClick={() => handleScroll(id)}
+        >
+          <button>{name}</button>
+          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+        </Motion.li>
+      ))}
+    </Motion.ul>
+  </div>
+</Motion.nav>
+
     </>
   );
 }
