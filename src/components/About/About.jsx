@@ -1,27 +1,29 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
 import * as LucideIcons from "lucide-react";
+import cv from "../../assets/img/Joyce Bekhet CV (2).pdf";
 
 export default function About() {
   const cards = [
     {
       icon: <LucideIcons.User size={28} className="text-blue-400" />,
       title: "Profile",
-      content: `Fresh biotechnology graduate (June 2025) with Excellent GPA and top distinction in graduation project. Hands-on experience in molecular biotechnology, clinical diagnostics, and pharmaceutical representation. Passionate about bridging research and industry applications in biotech, diagnostics, and pharma innovation.`
+      content: `Fresh biotechnology graduate (June 2025) with Excellent GPA and top distinction in graduation project. Hands-on experience in molecular biotechnology, clinical diagnostics, and pharmaceutical representation. Passionate about bridging research and industry applications in biotech, diagnostics, and pharma innovation.`,
     },
+
     {
       icon: <LucideIcons.BookOpen size={28} className="text-blue-400" />,
       title: "Education",
       content: `B.Sc. in Biotechnology – Misr University for Science & Technology (MUST), June 2025
 Cumulative GPA: Excellent
-Graduation Project: Transgenic Wheat for Salinity Tolerance – Highest project grade`
+Graduation Project: Transgenic Wheat for Salinity Tolerance – Highest project grade`,
     },
     {
       icon: <LucideIcons.Briefcase size={28} className="text-blue-400" />,
       title: "Professional Experience",
       content: `Medical Representative – Integra Pharma (2025–Present): Promoting and educating healthcare professionals, developing communication, sales, and market knowledge.
 Clinical Pathology & Genetic Diagnostics Trainee – Children’s Cancer Hospital 57357 (Oct 2024): Practical training in genetic diagnostics and clinical lab analysis.
-Graduation Project Researcher – AGERI & MUST (2024–2025): Conducted molecular techniques, plant tissue culture & salinity tolerance assays. Project awarded Excellent.`
+Graduation Project Researcher – AGERI & MUST (2024–2025): Conducted molecular techniques, plant tissue culture & salinity tolerance assays. Project awarded Excellent.`,
     },
     {
       icon: <LucideIcons.Code size={28} className="text-blue-400" />,
@@ -31,19 +33,19 @@ Cell & Plant Work: Cell culture, tissue culture, microscopy
 Bioinformatics & Data Analysis: Basic proficiency in sequence analysis tools
 Professional: Research, scientific writing, presentations, medical analysis
 Soft Skills: Communication, teamwork, adaptability, problem-solving
-Digital Tools: MS Office, Google Workspace`
+Digital Tools: MS Office, Google Workspace`,
     },
     {
       icon: <LucideIcons.Globe size={28} className="text-blue-400" />,
       title: "Languages",
-      content: `Arabic (Native), English (Excellent – TOEFL 2021)`
+      content: `Arabic (Native), English (Excellent – TOEFL 2021)`,
     },
     {
       icon: <LucideIcons.Award size={28} className="text-blue-400" />,
       title: "Certifications",
       content: `Clinical Pathology & Genetics Internship – 57357 Hospital (2024)
-TOEFL Certificate (2021)`
-    }
+TOEFL Certificate (2021)`,
+    },
   ];
 
   return (
@@ -60,15 +62,28 @@ TOEFL Certificate (2021)`
 
       {/* الكونتنت */}
       <div className="relative z-10 max-w-6xl w-full flex flex-col items-center">
-        <Motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-5xl font-bold text-blue-400 mb-12 text-center drop-shadow-lg"
-        >
-          About Me
-        </Motion.h1>
+       <div className="flex items-center justify-center gap-4 mb-12">
+  <Motion.h1
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="text-3xl md:text-5xl font-bold text-blue-400 drop-shadow-lg"
+  >
+    About Me
+  </Motion.h1>
+
+  {/* زرار CV */}
+  <a
+    href={cv}
+    download
+    className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 border border-blue-500 shadow-lg hover:shadow-blue-400/50 hover:scale-105 transition-all duration-300 text-white font-medium text-sm"
+  >
+    <LucideIcons.Download className="w-5 h-5" />
+    <span>CV</span>
+  </a>
+</div>
+
 
         {/* الكروت */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
@@ -83,7 +98,9 @@ TOEFL Certificate (2021)`
             >
               <div className="flex items-center mb-4 gap-3">
                 {card.icon}
-                <h2 className="text-xl font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">{card.title}</h2>
+                <h2 className="text-xl font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">
+                  {card.title}
+                </h2>
               </div>
               <p className="text-gray-200 whitespace-pre-line group-hover:text-gray-100 transition-colors">
                 {card.content}
