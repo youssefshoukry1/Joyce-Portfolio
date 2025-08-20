@@ -6,12 +6,12 @@ export default function Contact() {
   const contacts = [
     {
       name: "Email",
-      link: "joycebekhet44@gmail.com", // ✉️ غيّر الايميل هنا
+      link: "mailto:joycebekhet44@gmail.com", // ✉️ غيّر الايميل هنا
       icon: <Mail className="w-6 h-6 text-blue-400" />,
     },
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/yourprofile", // 🔗 غيّر لينكدإن هنا
+      link: "https://www.linkedin.com/in/joyce-bekhet-147707248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", // 🔗 غيّر لينكدإن هنا
       icon: <Linkedin className="w-6 h-6 text-blue-400" />,
     },
     {
